@@ -1,0 +1,28 @@
+# 伪数据，以“，”相隔，分别为id,name,xloc,yloc,node_type
+# 其中，node_type，1表示
+X1,sig_X1,-1,0,2
+X2,sig_X2,0,1,2
+X3,sig_X3,0,-1,2
+X4,sig_X4,5.5,2,2
+X5,sig_X5,6.5,2,2
+X6,sig_X6,6.5,1,2
+X7,sig_X7,6,0,2
+X8,sig_X8,6.5,-1,2
+X9,sig_X9,6,-2,2
+X10,sig_X10,7,-2,2
+X11,sig_X11,2,-1,2
+X12,sig_X12,3,-1,2
+S1,switch_S1,1,-1,1
+S2,switch_S2,1.5,0,1
+S3,switch_S3,0.5,0,1
+S4,switch_S4,1,1,1
+S5,switch_S5,2.5,0,1
+S6,switch_S6,4,1,1
+S7,switch_S7,3.5,0,1
+S8,switch_S8,3,1,1
+S9,switch_S9,4,0,1
+S10,switch_S10,4.5,-1,1
+S11,switch_S11,5,0,1
+S12,switch_S12,5.5,1,1
+S13,switch_S13,4.5,1,1
+S14,switch_S14,5.5,-1,1
