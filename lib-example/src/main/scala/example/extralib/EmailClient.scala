@@ -85,8 +85,8 @@ object EmailClient {
     new EmailClient(emailHostUser, emailHostPassword, emailHost, emailHostPort, defaultFromEmail)
 
   def main(args: Array[String]): Unit = {
-    val client = EmailClient()
-    val content = "<h2>中国人, world</h2>"
-    client.sendEmail("中国, test from scala", content, Seq("xx@yy.com"), contentType = "html")
+//    val client = EmailClient()
+//    val content = "<h2>中国人, world</h2>"
+//    client.sendEmail("中国, test from scala", content, Seq("xx@yy.com"), contentType = "html")
   }
 }
