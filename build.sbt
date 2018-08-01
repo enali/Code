@@ -29,8 +29,9 @@ lazy val bigdataExample = (project in file("bigdata-example"))
     description := "some example code about spark application",
     libraryDependencies ++= Seq(
       // spark
-      "org.apache.spark" %% "spark-core" % "2.3.1" % "provided",
-      "org.apache.spark" %% "spark-sql" % "2.3.1" % "provided"
+      // "% provided"避免assembly时生成过大的包, 但是影响从idea中直接运行spark应用
+      "org.apache.spark" %% "spark-core" % "2.3.1",  // % "provided"
+      "org.apache.spark" %% "spark-sql" % "2.3.1"
     )
   )
 
