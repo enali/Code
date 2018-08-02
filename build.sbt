@@ -4,11 +4,15 @@ lazy val commonSettings = Seq(
   organization := "cn.enali",
   scalaVersion := "2.12.6",
   libraryDependencies ++= slf4jDep ++ Seq(
-    scalatest,
+    scalatestDep % Test,
     "org.projectlombok" % "lombok" % versions("lombok")  // for change bytecode in compile time
   ),
   javacOptions ++= Seq(
-    "-encoding", "UTF-8"  // solove the GBK encode problem
+    "-encoding", "utf-8"  // solove the GBK encode problem
+  ),
+  scalacOptions ++= Seq(
+    "-deprecation",
+    "-encoding", "utf-8"
   ),
   assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
 )
@@ -18,7 +22,8 @@ lazy val commonLib = (project in file("common-lib"))
     commonSettings,
     name := "common-lib",
     version := "0.0.1",
-    description := "some code used by all other example module"
+    description := "some code used by all other example module",
+    crossScalaVersions := Seq("2.11.12", "2.12.6")
   )
 
 // commonLib build for scala_2.12, but the bigdata set the scala version 2.11
@@ -30,7 +35,7 @@ lazy val bigdataExample = (project in file("bigdata-example"))
     version := "0.0.1",
     scalaVersion := "2.11.12", // spark just support 2.11 now
     description := "some example code about spark application",
-    libraryDependencies ++= sparkDep ++ flinkDep
+    libraryDependencies ++= sparkDep.map(_ % "provided") ++ flinkDep.map(_ % "provided")
   )
 
 lazy val libExample = (project in file("lib-example"))

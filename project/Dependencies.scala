@@ -27,7 +27,7 @@ object Dependencies {
 //    "org.slf4j" % "slf4j-simple" % versions("slf4j") % Test  // used with simple
   )
 
-  lazy val scalatest = "org.scalatest" %% "scalatest" % versions("scalatest") % "test"
+  lazy val scalatestDep = "org.scalatest" %% "scalatest" % versions("scalatest")
 
   lazy val akkaDep = Seq(
     "com.typesafe.akka" %% "akka-stream" % versions("akka"),
@@ -38,13 +38,13 @@ object Dependencies {
 
   lazy val sparkDep = Seq(
     // "% provided"避免assembly时生成过大的包, 从idea中直接运行spark应用时要注意配置
-    "org.apache.spark" %% "spark-core" % versions("spark") % "provided",
-    "org.apache.spark" %% "spark-sql" % versions("spark") % "provided"
+    "org.apache.spark" %% "spark-core" % versions("spark"),
+    "org.apache.spark" %% "spark-sql" % versions("spark")
   )
 
   lazy val flinkDep = Seq(
-    "org.apache.flink" %% "flink-scala" % versions("flink") % "provided",
-    "org.apache.flink" %% "flink-streaming-scala" % versions("flink") % "provided"
+    "org.apache.flink" %% "flink-scala" % versions("flink"),
+    "org.apache.flink" %% "flink-streaming-scala" % versions("flink")
   )
 
   // serialize/deserialize
