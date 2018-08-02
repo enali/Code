@@ -8,7 +8,7 @@ import java.nio.channels.FileChannel;
 
 public class BasicChannelExample {
     public static void main(String[] args) throws IOException {
-        URL fname = BasicChannelExample.class.getClassLoader().getResource("example.lib/nio-data.txt");
+        URL fname = BasicChannelExample.class.getClassLoader().getResource("example/stdlib/nio-data.txt");
         RandomAccessFile raf = new RandomAccessFile(fname.getPath(), "rw");
         FileChannel fc = raf.getChannel();
         ByteBuffer bb = ByteBuffer.allocate(48);

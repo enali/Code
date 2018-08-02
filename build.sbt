@@ -1,8 +1,11 @@
+import Dependencies._
+
 lazy val commonSettings = Seq(
   organization := "cn.enali",
   scalaVersion := "2.12.6",
   libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+    "org.scalatest" %% "scalatest" % versions("scalatest") % "test",
+    "org.projectlombok" % "lombok" % versions("lombok")  // for change bytecode in compile time
   ),
   javacOptions ++= Seq(
     "-encoding", "UTF-8"  // solove the GBK encode problem
@@ -27,15 +30,7 @@ lazy val bigdataExample = (project in file("bigdata-example"))
     version := "0.0.1",
     scalaVersion := "2.11.12", // spark just support 2.11 now
     description := "some example code about spark application",
-    libraryDependencies ++= Seq(
-      // spark
-      // "% provided"避免assembly时生成过大的包, 从idea中直接运行spark应用时要注意配置
-      "org.apache.spark" %% "spark-core" % "2.3.1" % "provided",
-      "org.apache.spark" %% "spark-sql" % "2.3.1" % "provided",
-      // flink
-      "org.apache.flink" %% "flink-scala" % "1.5.1" % "provided",
-      "org.apache.flink" %% "flink-streaming-scala" % "1.5.1" % "provided"
-    )
+    libraryDependencies ++= sparkDep ++ flinkDep
   )
 
 lazy val libExample = (project in file("lib-example"))
@@ -46,17 +41,13 @@ lazy val libExample = (project in file("lib-example"))
     version := "0.0.1",
     description := "some example code about extra lib",
     resolvers += "lightshed-maven" at "http://dl.bintray.com/content/lightshed/maven", // courier email
-    libraryDependencies ++= Seq(
-      "com.fasterxml.jackson.core" % "jackson-core" % "2.9.3", // serialize/deserialize
-      "com.fasterxml.jackson.core" % "jackson-databind" % "2.9.3",
-      "com.fasterxml.jackson.core" % "jackson-annotations" % "2.9.3",
+    libraryDependencies ++= akkaDep ++ jacksonDep ++ Seq(
+      guavaDep, nettyDep
+    ) ++ Seq(
       "org.json4s" %% "json4s-jackson" % "3.5.3",
       "com.beust" % "jcommander" % "1.72", // cmdline arguments parser
       "ch.lightshed" %% "courier" % "0.1.4", // send email
-      "com.typesafe.akka" %% "akka-http" % "10.1.1", // akka actor
-      "com.typesafe.akka" %% "akka-stream" % "2.5.14",
-      "com.typesafe.akka" %% "akka-remote" % "2.5.14",
-      "com.typesafe.akka" %% "akka-http-spray-json" % "10.1.1",
+      "io.dropwizard.metrics" % "metrics-core" % "4.0.3"  // metrics
     )
   )
 
