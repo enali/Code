@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JCommanderTest {
+public class JCommanderExample {
     @Parameter
     public List<String> parameters = Lists.newArrayList();
 
@@ -26,7 +26,7 @@ public class JCommanderTest {
     public Map<String, String> dynamicParams = new HashMap<>();
 
     public static void main(String[] args) {
-        JCommanderTest jct = new JCommanderTest();
+        JCommanderExample jct = new JCommanderExample();
         String[] argv = {"-log", "2", "-groups", "unit1,unit2,unit3","-debug", "-Doption=value", "a", "b", "c"};
         JCommander.newBuilder().addObject(jct).build().parse(argv);
 

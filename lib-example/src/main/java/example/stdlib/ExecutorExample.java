@@ -7,7 +7,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ExecutorTester {
+public class ExecutorExample {
     private static class CodingTask implements Runnable {
         private int idx;
         public CodingTask(int idx) { this.idx = idx; }
