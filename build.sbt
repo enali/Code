@@ -3,8 +3,8 @@ import Dependencies._
 lazy val commonSettings = Seq(
   organization := "cn.enali",
   scalaVersion := "2.12.6",
-  libraryDependencies ++= Seq(
-    "org.scalatest" %% "scalatest" % versions("scalatest") % "test",
+  libraryDependencies ++= slf4jDep ++ Seq(
+    scalatest,
     "org.projectlombok" % "lombok" % versions("lombok")  // for change bytecode in compile time
   ),
   javacOptions ++= Seq(
@@ -42,8 +42,7 @@ lazy val libExample = (project in file("lib-example"))
     description := "some example code about extra lib",
     resolvers += "lightshed-maven" at "http://dl.bintray.com/content/lightshed/maven", // courier email
     libraryDependencies ++= akkaDep ++ jacksonDep ++ Seq(
-      guavaDep, nettyDep
-    ) ++ Seq(
+      guavaDep, nettyDep,
       "org.json4s" %% "json4s-jackson" % "3.5.3",
       "com.beust" % "jcommander" % "1.72", // cmdline arguments parser
       "ch.lightshed" %% "courier" % "0.1.4", // send email
