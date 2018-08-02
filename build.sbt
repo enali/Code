@@ -42,7 +42,7 @@ lazy val libExample = (project in file("lib-example"))
     description := "some example code about extra lib",
     resolvers += "lightshed-maven" at "http://dl.bintray.com/content/lightshed/maven", // courier email
     libraryDependencies ++= akkaDep ++ jacksonDep ++ Seq(
-      guavaDep, nettyDep,
+      guavaDep, nettyDep, sprayJsonDep,
       "org.json4s" %% "json4s-jackson" % "3.5.3",
       "com.beust" % "jcommander" % "1.72", // cmdline arguments parser
       "ch.lightshed" %% "courier" % "0.1.4", // send email
