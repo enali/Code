@@ -1,8 +1,12 @@
 package cn.enali.utils;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class TreeUtils {
+    private static String DEFAULT_DELIMITER = ",";
+
     // 根据前序/中序遍历, 创建一个树
     public static TreeNode<Character> createCharTree(String preOrder, String inOrder) {
         if (preOrder == null || inOrder == null) return null;
@@ -39,8 +43,12 @@ public class TreeUtils {
     }
 
     // 以迭代的方式进行二叉树的中序遍历.
-    public static <T> void inOrderIter(TreeNode<T> root) {
+    public static <T> String inOrderIter(TreeNode<T> root, String delimiter) {
+        if (root == null) return "";
+
         TreeNode<T> cur = root;
+        StringBuilder sb = new StringBuilder();
+
         Stack<TreeNode<T>> s = new Stack<>();
         while (!s.isEmpty() || cur != null) {
             while (cur != null) {
@@ -48,9 +56,14 @@ public class TreeUtils {
                 cur = cur.left;
             }
             cur = s.pop();
-            System.out.print(cur.val);
+            sb.append(cur.val).append(delimiter);
             cur = cur.right;
         }
+        return sb.toString().substring(0, sb.length()-delimiter.length());
+    }
+
+    public static <T> String inOrderIter(TreeNode<T> root) {
+        return inOrderIter(root, DEFAULT_DELIMITER);
     }
 
     // 后序遍历
@@ -70,5 +83,26 @@ public class TreeUtils {
         return postOrder(preOrder.substring(1, 1 + rootIndex), inOrder.substring(0, rootIndex))
                 + postOrder(preOrder.substring(1 + rootIndex), inOrder.substring(1 + rootIndex))
                 + rootValue;
+    }
+
+    // 层序遍历字串
+    public static <T> String levelOrder(TreeNode<T> root, String delimiter) {
+        if (root == null) return "";
+
+        Queue<TreeNode<T>> q = new LinkedList<>();
+        q.add(root);
+        StringBuilder sb = new StringBuilder();
+
+        while (!q.isEmpty()) {
+            TreeNode<T> tmp = q.remove();
+            sb.append(tmp.val).append(delimiter);
+            if (tmp.left != null) q.add(tmp.left);
+            if (tmp.right != null) q.add(tmp.right);
+        }
+        return sb.toString().substring(0, sb.length()-delimiter.length());
+    }
+
+    public static <T> String levelOrder(TreeNode<T> root) {
+        return levelOrder(root, DEFAULT_DELIMITER);
     }
 }

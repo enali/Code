@@ -3,13 +3,20 @@ package cn.enali.utils;
 import java.util.List;
 
 public class ListUtils {
-    public static <T> String mkString(ListNode<T> head, String delimeter) {
+    private static String DEFAULT_DELIMITER = ",";
+
+    public static <T> String mkString(ListNode<T> head, String delimiter) {
+        if (head == null) return "";  // 空节点直接返回空字串
+
         StringBuilder sb = new StringBuilder();
         while (head != null) {
-            sb.append(head.val + delimeter);
+            sb.append(head.val).append(delimiter);
             head = head.next;
         }
-        return sb.toString().substring(0, sb.length() - delimeter.length());
+        return sb.toString().substring(0, sb.length() - delimiter.length());
+    }
+    public static <T> String mkString(ListNode<T> head) {
+        return mkString(head, DEFAULT_DELIMITER);
     }
 
     // 以递归的方式从数组中创建单向链表
