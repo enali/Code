@@ -1,4 +1,4 @@
-package example.java;
+package example.java.other;
 
 public class BinarySearch {
     // [a, b]
@@ -30,6 +30,18 @@ public class BinarySearch {
             }
         }
         return -1;
+    }
+
+    // 有重复元素的最左侧位置
+    public int binarySearchLeft(int[] ary, int k) {
+        int l = 0;
+        int h = ary.length - 1;
+        while (l < h) {  // IMP: 若包括==,则可能循环无法退出
+            int mid = l + (h - l) / 2;
+            if (ary[mid] >= k) h = mid;  // IMP: [l,mid]是解, 包括mid
+            else l = mid + 1;
+        }
+        return l;
     }
 
     public static void main(String[] args) {

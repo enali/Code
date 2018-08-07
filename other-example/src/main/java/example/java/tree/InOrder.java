@@ -37,19 +37,5 @@ public class InOrder {
     }
 
     public static void main(String[] args) {
-        TreeCreator creator = new TreeCreator();
-        InOrder inOrder = new InOrder();
-        TreeTraversal traversal = new TreeTraversal();
-
-        TreeNode sampleTree = creator.createSampleTree();
-        traversal.inOrder(sampleTree);
-        System.out.println();
-
-        inOrder.traverse(sampleTree);
-        inOrder.traverse(creator.createTree("", ""));
-        inOrder.traverse(creator.createTree("A", "A"));
-        inOrder.traverse(creator.createTree("AB", "BA"));
-        inOrder.traverse(creator.createTree("ABCD", "DCBA"));
-        inOrder.traverse(creator.createTree("ABCD", "ABCD"));
     }
 }

@@ -61,20 +61,5 @@ public class InOrderTree implements Iterable<TreeNode> {
     }
 
     public static void main(String[] args) {
-        TreeCreator creator = new TreeCreator();
-        TreeNode root = creator.createSampleTree();
-        TreeNode tmp = null;
-
-        TreeTraversal traversal = new TreeTraversal();
-        tmp = root;
-        traversal.inOrder(tmp);
-        System.out.println();
-
-        InOrderTree tree = new InOrderTree(root);
-
-        for (TreeNode node :tree) {
-            System.out.print(node.getValue());
-        }
-        System.out.println();
     }
 }

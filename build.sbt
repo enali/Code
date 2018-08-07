@@ -3,8 +3,9 @@ import Dependencies._
 lazy val commonSettings = Seq(
   organization := "cn.enali",
   scalaVersion := "2.12.6",
-  libraryDependencies ++= slf4jDep ++ Seq(
+  libraryDependencies ++= slf4jDep ++ junitDep.map(_ % Test) ++ Seq(
     scalatestDep % Test,
+    "net.aichler" % "jupiter-interface" % "0.7.0",  // for sbt to run junit5 test
     "org.projectlombok" % "lombok" % versions("lombok")  // for change bytecode in compile time
   ),
   javacOptions ++= Seq(

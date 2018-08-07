@@ -10,21 +10,21 @@ package example.java.offer;
  * 关键是理清: [mid], [lo], [hi]三者的关系, 穷举
  */
 public class Offer08 {
-    public static int minNumberInRotateArray(int [] array) {
-        if (array == null) return -1;
-        if (array.length == 0) return 0;
+    public static int minNumberInRotateArray(int[] nums) {
+        if (nums == null) return -1;
+        if (nums.length == 0) return 0;
 
-        int lo = 0, hi = array.length-1;
-        while (array[lo] >= array[hi]) {  // 确保[lo]在前半部分, hi在后半部分
-            if (hi - lo == 1) return array[hi];  // 差1的情况下, 先后者
-
-            int mid = (lo + hi) / 2;
-            if (array[mid] == array[hi] && array[mid] == array[lo]) {  // 无法判断, 遍历
-                return minNum(array, lo, hi);
-            } else if (array[mid] < array[lo]) hi = mid;  // 在前半部分
-            else if (array[mid] > array[hi]) lo = mid;  // 在后半部分
+        int lo = 0, hi = nums.length-1;
+        // 避免数组是有序的, 即旋转元素为0;
+        if (nums[lo] < nums[hi]) return nums[lo];
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (nums[mid] == nums[lo] && nums[mid] == nums[hi])
+                return minNum(nums, lo, hi);
+            else if (nums[mid] <= nums[hi]) hi = mid;  // IMP: 顺序很重要, 若数组为有序数组
+            else lo = mid + 1;
         }
-        return array[lo];  // 如果一开始就有序
+        return nums[lo];
     }
 
     // 从数组中找到最小的数

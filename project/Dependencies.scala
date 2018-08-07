@@ -14,7 +14,8 @@ object Dependencies {
     "slf4j" -> "1.8.0-beta2",
     "log4j" -> "2.11.1",
     "scalatest" -> "3.0.5",
-    "spray-json" -> "1.3.4"
+    "spray-json" -> "1.3.4",
+    "junit" -> "5.2.0"
   )
 
   lazy val guavaDep = "com.google.guava" % "guava" % versions("guava")  // google guava
@@ -29,6 +30,11 @@ object Dependencies {
   )
 
   lazy val scalatestDep = "org.scalatest" %% "scalatest" % versions("scalatest")
+
+  lazy val junitDep = Seq(
+    "org.junit.jupiter" % "junit-jupiter-engine" % versions("junit"),
+    "org.junit.jupiter" % "junit-jupiter-api" % versions("junit")
+  )
 
   lazy val sprayJsonDep = "io.spray" %%  "spray-json" % versions("spray-json")
 
