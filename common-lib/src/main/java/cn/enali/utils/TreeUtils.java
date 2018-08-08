@@ -1,8 +1,7 @@
 package cn.enali.utils;
 
+import java.util.*;
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
 
 public class TreeUtils {
     private static String DEFAULT_DELIMITER = ",";
@@ -22,8 +21,39 @@ public class TreeUtils {
     }
 
     // TODO: 根据层序遍历的字串进行恢复, 无节点则以'#'代替
-    public static TreeNode<Character> createCharTree(String levelOrder) {
-        return null;
+    public static TreeNode<String> createCharTree(String[] levelOrder) {
+        int len = levelOrder.length;
+        List<TreeNode<String>> nodes = new ArrayList<>(len);
+        for (int i=0; i<len; i++) {
+            nodes.add(new TreeNode<>(levelOrder[i]));
+        }
+        for (int i=1; i<len; i++) {
+            TreeNode<String> parent = nodes.get((i-1) / 2);  // 父节点
+            if ((i-1) % 2 == 0) parent.left = nodes.get(i);  // 左链
+            else parent.right = nodes.get(i);  // 右链
+        }
+        return nodes.get(0);
+    }
+
+    // 根据层次遍历的元素列表创建二叉树, 无节点则以null代替
+    public static <T> TreeNode<T> createCharTree(List<T> levelOrder) {
+        List<TreeNode<T>> nodes = new ArrayList<>();
+        for (T t : levelOrder) {  // 将元素值转为节点的list, 若元素为null, 则节点为空
+            if (t != null) nodes.add(new TreeNode<>(t));
+            else nodes.add(null);
+        }
+        int len = nodes.size();
+        for (int i=1; i<len; i++) {
+            TreeNode<T> parent = nodes.get((i-1) / 2);  // 父节点
+            if (parent == null) {
+                if (nodes.get(i) != null)
+                    throw new IllegalArgumentException("child must be null when parent is null");
+                continue;
+            }
+            if ((i-1) % 2 == 0) parent.left = nodes.get(i);  // 左链
+            else parent.right = nodes.get(i);  // 右链
+        }
+        return nodes.get(0);
     }
 
     // 前序遍历
@@ -86,6 +116,7 @@ public class TreeUtils {
     }
 
     // 层序遍历字串
+    // TODO: 添加完全层次遍历的flag, 即无元素时替换为票房字符
     public static <T> String levelOrder(TreeNode<T> root, String delimiter) {
         if (root == null) return "";
 

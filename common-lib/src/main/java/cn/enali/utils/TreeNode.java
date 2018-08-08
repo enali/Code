@@ -10,4 +10,9 @@ public class TreeNode<T> {
         left = null;
         right = null;
     }
+
+    @Override
+    public String toString() {
+        return "TreeNode[ " + this.val + " ]";
+    }
 }

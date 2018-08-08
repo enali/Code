@@ -1,6 +1,6 @@
 package cn.enali.utils;
 
-// 链表的节点
+// 单向链表的节点
 public class ListNode<T> {
     public final T val;  // 不可变
     public ListNode<T> next;
@@ -8,5 +8,10 @@ public class ListNode<T> {
     public ListNode(T value) {
         this.val = value;
         this.next = null;
+    }
+
+    @Override
+    public String toString() {
+        return "ListNode[ " + val + " ]";
     }
 }
