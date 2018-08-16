@@ -3,6 +3,7 @@ package example.java.leetcode;
 import java.util.Arrays;
 
 public class Test9 {
+    // 实现最大堆
     private class MaxPQ {
         private int[] pq;  // 从1索引
         private int count;  // 元素数量, 指向最后一个元素

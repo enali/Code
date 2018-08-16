@@ -1,13 +1,16 @@
 package example.java.leetcode;
 
 /**
+ * 题目:
+ * 对于一个正的32位整数n, 找到比n大的最小整数, 要求使用n中的数字.
+ *
  * 思路:
  * 如, 4321, 从低位到高位, 数字递增, 则4|3|2|1这4个数字已经组成最大的数字了, 所以直接返回-1
  * 如, 2431, 后3位已经最大了, 因此, 需要加上高位(此处指2)进行数字重排列
  *   1) 从后3位中找到比2大的最小的数字, 与2替换
  *   2) 将替换后的后3位, 从小到大排列组成最小的数字
  */
-class NextGreaterElement {
+class NextGreaterElement556 {
     public int nextGreaterElement(int n) {
         // 分解数字
         int[] ary = new int[10];
@@ -50,7 +53,7 @@ class NextGreaterElement {
 
     public static void main(String[] args) {
         int n = 1999999999;
-        NextGreaterElement nge = new NextGreaterElement();
+        NextGreaterElement556 nge = new NextGreaterElement556();
         int res = nge.nextGreaterElement(n);
         System.out.println(res);
     }
