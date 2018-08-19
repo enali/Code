@@ -1,6 +1,6 @@
 package example.scala.leetcode
 
-class ListNode(var _x: Int = 0) {
-  var next: ListNode = null
-  var x: Int = _x
+class ListNode[T](var _x: T) {
+  var next: ListNode[T] = null
+  var x: T = _x
 }
