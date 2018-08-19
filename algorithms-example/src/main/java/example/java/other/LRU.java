@@ -14,6 +14,8 @@ import java.util.Map;
 public class LRU {
     public static void main(String[] args) {
         int cacheSize = 5;
+        // loadFactor是指, 当表中超过75%的位置已经填入元素, 则这个表就会用双倍的桶数自动地进行再散列
+        // 那就意味着, 在知道确定元素数时, 为避免再散列, 将初始容量设置为cacheSize / 0.75
         Map<String, Integer> lru = new LinkedHashMap<String, Integer>(
                 (int) Math.ceil(cacheSize / 0.75f) + 1,
                 0.75f,
