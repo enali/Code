@@ -15,28 +15,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.6:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-sbt:test-interface:1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.opentest4j:opentest4j:1.0.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-suite-api:1.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-runner:1.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-launcher:1.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-engine:1.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-commons:1.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.junit.jupiter:junit-jupiter-engine:5.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.junit.jupiter:junit-jupiter-api:5.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.hamcrest:hamcrest-core:1.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apiguardian:apiguardian-api:1.0.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: net.aichler:jupiter-interface:0.7.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: junit:junit:4.12:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.slf4j:slf4j-log4j12:1.8.0-beta2:jar" level="project" />
-    <orderEntry type="library" name="sbt: log4j:log4j:1.2.17:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.scalactic:scalactic_2.12:3.0.5:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang:scala-reflect:2.12.6:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.8.0-beta2:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.apache.logging.log4j:log4j-core:2.11.1:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.projectlombok:lombok:1.18.2:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest_2.12:3.0.5:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.opentest4j:opentest4j:1.1.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.junit.platform:junit-platform-engine:1.2.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.junit.platform:junit-platform-commons:1.2.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.junit.jupiter:junit-jupiter-engine:5.2.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.junit.jupiter:junit-jupiter-api:5.2.0:jar" level="project" />
     <orderEntry type="module-library">
       <library name="sbt: unmanaged-sources-and-docs">
         <CLASSES />
@@ -48,10 +31,27 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="TEST" name="sbt: org.junit.jupiter:junit-jupiter-api:5.2.0:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.junit.jupiter:junit-jupiter-engine:5.2.0:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.junit.platform:junit-platform-commons:1.2.0:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.junit.platform:junit-platform-engine:1.2.0:jar" level="project" />
-    <orderEntry type="library" scope="TEST" name="sbt: org.opentest4j:opentest4j:1.1.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalatest:scalatest_2.12:3.0.5:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang.modules:scala-xml_2.12:1.0.6:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.projectlombok:lombok:1.18.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apache.logging.log4j:log4j-core:2.11.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.8.0-beta2:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scala-lang:scala-reflect:2.12.6:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="sbt: org.scalactic:scalactic_2.12:3.0.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: log4j:log4j:1.2.17:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.slf4j:slf4j-log4j12:1.8.0-beta2:jar" level="project" />
+    <orderEntry type="library" name="sbt: junit:junit:4.12:jar" level="project" />
+    <orderEntry type="library" name="sbt: net.aichler:jupiter-interface:0.7.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.apiguardian:apiguardian-api:1.0.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.hamcrest:hamcrest-core:1.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.junit.jupiter:junit-jupiter-api:5.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.junit.jupiter:junit-jupiter-engine:5.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-commons:1.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-engine:1.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-launcher:1.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-runner:1.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.junit.platform:junit-platform-suite-api:1.1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.opentest4j:opentest4j:1.0.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.scala-sbt:test-interface:1.0:jar" level="project" />
   </component>
 </module>
