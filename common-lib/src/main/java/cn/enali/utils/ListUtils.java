@@ -1,5 +1,7 @@
 package cn.enali.utils;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 public class ListUtils {
@@ -20,13 +22,46 @@ public class ListUtils {
     }
 
     // 以递归的方式从数组中创建单向链表
-    public static <T> ListNode<T> createLinkedList(List<T> data) {
-        if (data.isEmpty()) {
-            return null;
+//    public static <T> ListNode<T> createLinkedList(List<T> data) {
+//        if (data.isEmpty()) {
+//            return null;
+//        }
+//        ListNode<T> firstNode = new ListNode<>(data.get(0));
+//        firstNode.next = createLinkedList(data.subList(1, data.size()));
+//        return firstNode;
+//    }
+
+    public static <T> ListNode<T> createLinkedList(Collection<T> c) {
+        if (c.isEmpty()) return null;
+        Iterator<T> it = c.iterator();
+        ListNode<T> head = new ListNode<>(it.next());
+        ListNode<T> prev = head;
+
+        while (it.hasNext()) {
+            prev.next = new ListNode<>(it.next());
+            prev = prev.next;
         }
-        ListNode<T> firstNode = new ListNode<>(data.get(0));
-        firstNode.next = createLinkedList(data.subList(1, data.size()));
-        return firstNode;
+        return head;
+    }
+
+    // 创建循环链表, entry是入口节点
+    public static <T extends Comparable<T>> ListNode<T> createLoopList(Collection<T> c, T entry) {
+        if (c.isEmpty()) return null;
+        Iterator<T> it = c.iterator();
+        ListNode<T> head = new ListNode<>(it.next());
+        ListNode<T> prev = head;
+        ListNode<T> entryNode = null;
+
+        while (it.hasNext()) {
+            T ele = it.next();
+            ListNode<T> tmp = new ListNode<>(ele);
+            prev.next = tmp;
+            prev = prev.next;
+            if (ele.compareTo(entry) == 0)
+                entryNode = tmp;
+        }
+        prev.next = entryNode;
+        return head;
     }
 
     // 以递归的方式进行单向链表的逆转

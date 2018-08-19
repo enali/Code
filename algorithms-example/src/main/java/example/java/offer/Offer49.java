@@ -3,6 +3,9 @@ package example.java.offer;
 /**
  * 题目:
  * 实现一个函数stringToInt,实现把字符串转换成整数这个功能，不能使用atoi或者其他类似的库函数。
+ *
+ * 思路:
+ * 这里主要考察边界条件
  */
 public class Offer49 {
     public static int strToInt(String str) {
