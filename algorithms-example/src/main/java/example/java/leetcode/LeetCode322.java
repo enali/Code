@@ -2,7 +2,7 @@ package example.java.leetcode;
 
 import java.util.Arrays;
 
-public class CoinChange322 {
+public class LeetCode322 {
     public static int coinChange(int[] coins, int amount) {
         if (amount <= 0) return 0;
         if (coins == null || coins.length <= 0) return 0;

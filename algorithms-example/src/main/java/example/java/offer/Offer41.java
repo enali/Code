@@ -9,6 +9,8 @@ import java.util.List;
  *
  * 思路:
  * 因为数组是有序的, 分别从最左和最右对元素求和, 如果和大, 则最右往左移, 如果和小, 则最左往右移
+ *
+ * 类似LeetCode的TwoSum问题
  */
 public class Offer41 {
     public static List<Integer> findNumbersWithSum(int[] data, int sum) {

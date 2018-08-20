@@ -10,7 +10,7 @@ package example.java.leetcode;
  *   1) 从后3位中找到比2大的最小的数字, 与2替换
  *   2) 将替换后的后3位, 从小到大排列组成最小的数字
  */
-class NextGreaterElement556 {
+class LeetCode556 {
     public int nextGreaterElement(int n) {
         // 分解数字
         int[] ary = new int[10];
@@ -53,7 +53,7 @@ class NextGreaterElement556 {
 
     public static void main(String[] args) {
         int n = 1999999999;
-        NextGreaterElement556 nge = new NextGreaterElement556();
+        LeetCode556 nge = new LeetCode556();
         int res = nge.nextGreaterElement(n);
         System.out.println(res);
     }

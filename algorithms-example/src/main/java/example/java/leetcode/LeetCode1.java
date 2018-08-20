@@ -8,7 +8,7 @@ import java.util.Map;
  * 题目:
  * 找到数组中, 和为target的两个元素的索引
  */
-public class TwoSum1 {
+public class LeetCode1 {
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> m = new HashMap<>();
         int[] rst = new int[2];

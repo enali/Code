@@ -1,5 +1,9 @@
 package example.java.offer;
 
+/**
+ * 题目:
+ * 决断一个字符串是否表示一个数字
+ */
 public class Offer54 {
     public static boolean isNumeric(char[] str) {
         if (str == null || str.length == 0) return false;

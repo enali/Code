@@ -5,7 +5,7 @@ package example.java.leetcode;
  * 用dp[i]表示遍历到第i个房间时, 最大子序列和, 则要么包括ith房间, 要么不包括,则
  * max(dp[i-2] + ary[i], dp[i-1])
  */
-public class HouseRobber198 {
+public class LeetCode198 {
     public int rob(int[] nums) {
         int len = nums.length;
         if (len == 0) return 0;

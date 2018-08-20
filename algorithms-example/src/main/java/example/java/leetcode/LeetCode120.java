@@ -1,6 +1,6 @@
 package example.java.leetcode;
 
-public class Triangle120 {
+public class LeetCode120 {
     public static int minimumTotal(int[][] ary) {
         int row = ary.length;
         int col = ary[row-1].length;

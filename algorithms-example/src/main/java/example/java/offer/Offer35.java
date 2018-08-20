@@ -7,7 +7,7 @@ import java.util.Arrays;
  * 在字符串中找出第一个只出现一次的字符。
  *
  * 思路:
- * 用一个数组来存储字符的出现情况
+ * 用一个数组来存储字符的出现情况, 参考 {@link Offer55}
  */
 public class Offer35 {
     public static char firstNotRepeatingChar(String str) {

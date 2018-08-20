@@ -12,7 +12,7 @@ import java.util.List;
  * 1, 排序数组
  * 2, 遍历数组, 对每个元素, 从后序元素中, 以双向求和的方式
  */
-class ThreeSum15 {
+class LeetCode15 {
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res = new LinkedList<>();
@@ -45,7 +45,7 @@ class ThreeSum15 {
     }
 
     public static void main(String[] args) {
-        ThreeSum15 s = new ThreeSum15();
+        LeetCode15 s = new LeetCode15();
         int[] nums = {-1, 0, 1, 2, -1, -4};
         List<List<Integer>> res = s.threeSum(nums);
         for (List<Integer> l : res) {

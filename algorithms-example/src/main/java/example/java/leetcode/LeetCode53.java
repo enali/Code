@@ -5,7 +5,7 @@ package example.java.leetcode;
  * maxSubArray(int[] ary, int i)定义为, 以A[i]为结尾元素的最大子序列和
  * d[i] = (d[i-1] > 0 ? d[i-1] : 0) + A[i], 找所有d[i]中最大值
  */
-public class MaximumSubarray53 {
+public class LeetCode53 {
     public int maxSubArray(int[] nums) {
         if (nums.length < 1) return 0;
 
