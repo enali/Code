@@ -2,6 +2,15 @@ package example.java.leetcode;
 
 import java.util.Arrays;
 
+/**
+ * 题目:
+ * 找零, 给定硬币的面值, 给定总数, 求最少的硬币数
+ * 如, coins=[1,2,5,7,10], 金额为14
+ *
+ * 思考:
+ * dp[i]表示金额为i时, 找零的最小个数
+ * dp[i] = min(dp[i-1], dp[i-2], dp[i-5], dp[i-7], dp[i-10]) + 1
+ */
 public class LeetCode322 {
     public static int coinChange(int[] coins, int amount) {
         if (amount <= 0) return 0;
@@ -19,8 +28,8 @@ public class LeetCode322 {
                 if (tmp >= 0 && dp[tmp] != -1 && dp[tmp] < min)
                     min = dp[tmp];
             }
-            if (min == Integer.MAX_VALUE) dp[coin] = -1;
-            else dp[coin] = min + 1;
+            if (min == Integer.MAX_VALUE) dp[coin] = -1;  // 未找到
+            else dp[coin] = min + 1;  // 更新第i的值
         }
         return dp[amount];
     }
