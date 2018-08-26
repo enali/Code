@@ -9,6 +9,8 @@ import java.util.Collections;
  *
  * 思路:
  * 以dp[i]存储以ary[i]为结尾的递增序列的长度, 则dp[j]表示, 所有小于ary[j]的元素的所有dp中的值, +1
+ *
+ * 同: {@link example.java.leetcode.LeetCode300}
  */
 public class Offer31_2 {
     public static ArrayList<Integer> maxSubIncreaseArray(int[] ary) {

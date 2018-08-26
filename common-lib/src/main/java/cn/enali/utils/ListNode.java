@@ -2,7 +2,7 @@ package cn.enali.utils;
 
 // 单向链表的节点
 public class ListNode<T> {
-    public final T val;  // 不可变
+    public T val;  // 不可变
     public ListNode<T> next;
 
     public ListNode(T value) {

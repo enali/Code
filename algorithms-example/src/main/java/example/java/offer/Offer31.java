@@ -7,6 +7,8 @@ package example.java.offer;
  * 思路:
  * dp[i]表示包含第i个数的连续序列的最大的和, 则如果dp[i] > 0, 则dp[i+1] = ary[i+1] + dp[i];
  * 否则等于ary[i+1]
+ *
+ * 同: {@link example.java.leetcode.LeetCode53}
  */
 public class Offer31 {
     public static int maxSubArray(int[] ary) {

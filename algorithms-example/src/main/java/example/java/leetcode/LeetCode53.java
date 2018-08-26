@@ -7,6 +7,8 @@ package example.java.leetcode;
  * 思路:
  * maxSubArray(int[] ary, int i)定义为, 以A[i]为结尾元素的最大子序列和
  * d[i] = (d[i-1] > 0 ? d[i-1] : 0) + A[i], 找所有d[i]中最大值
+ *
+ * 同 {@link example.java.offer.Offer31}
  */
 public class LeetCode53 {
     public static int maxSubArray(int[] nums) {
