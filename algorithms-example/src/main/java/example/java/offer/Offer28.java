@@ -7,6 +7,13 @@ import java.util.Arrays;
  * 题目:
  * 输入一个字符串, 按字典序打印出该字符串中字符的所有排列, 例如输入字符串abc, 则打印出由字符a, b, c所有排列出的所有字符串:
  * abc, acb, bac, bca, cab, cba. 可能有重复字符
+ *
+ * 思考:
+ * 理解, 有n个空位, 每个空位都可能是str的每个字符, 但又要求每个空位不能重复占用str的字符
+ *
+ * 参考:
+ * * {@link example.java.leetcode.LeetCode78}, 这是选择元素和不选择元素的问题
+ * * {@link example.java.leetcode.LeetCode90}
  */
 public class Offer28 {
     public static ArrayList<String> permutation(String str) {
@@ -21,7 +28,6 @@ public class Offer28 {
         return rst;
     }
 
-    // 可以这样理解, 有n个空位, 每个空位都可能是str的每个字符, 但又要求每个空位不能重复占用str的字符
     // used记录字符的使用情况
     private static void dfs(char[] ch, boolean[] used, StringBuilder sb, ArrayList<String> rst) {
         if (sb.length() == ch.length) {

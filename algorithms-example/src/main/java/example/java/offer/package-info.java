@@ -65,7 +65,7 @@
  * 第51-60题:
  * 51, 数组中重复的数字, {@link example.java.offer.Offer51}, IMP
  * 52, 构建乘积数组, {@link example.java.offer.Offer52}
- * 53, 正则表达式匹配, {@link example.java.offer.Offer53}
+ * 53, 正则表达式匹配, {@link example.java.offer.Offer53}, IMP
  * 54, 表示数值的字符串, {@link example.java.offer.Offer54}
  * 55, 字符流中第一个不重复的字符, {@link example.java.offer.Offer55}
  * 56, 链表中环的入口结点, {@link example.java.offer.Offer56}, IMP

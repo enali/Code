@@ -2,17 +2,20 @@ package example.java.leetcode;
 
 import cn.enali.utils.TreeNode;
 
-import java.util.Stack;
-
 /**
  * 题目:
  * 已知二叉树, 求二叉树中给定的两个节点的最近公共祖先(两节点的最近公共祖先u, 满足在树上最低(离根最远), 且v,w两个节点都是u的子孙)
+ *
+ * 思考:
+ *
+ * 参考:
+ * * {@link example.java.offer.Offer50}, 这是多叉树
  */
 public class LeetCode236 {
     // 基于这样一个事实:
     // 如果在左侧树找到2个节点, 则公共节点在左侧, 如果在右侧树找到2个节点, 则公共节点在右侧, 如果分别在两侧找到2个节点, 则公共节点为当前节点
     public static TreeNode<Integer> lowestCommonAncestor(TreeNode<Integer> root, TreeNode<Integer> p, TreeNode<Integer> q) {
-        if (root == null || root == p || root == q) return root;
+        if (root == null || root == p || root == q) return root;  // 表示找到此为止, 不再继续, 找p/q的子节点无用
         TreeNode<Integer> left = lowestCommonAncestor(root.left, p, q);
         TreeNode<Integer> right = lowestCommonAncestor(root.right, p, q);
         // 如果左为null, 则在右, 如果左不为null, 右为null, 则在左, 如果左右都不为null, 则为root
