@@ -26,16 +26,15 @@ public class PostfixExpr {
             else if (c == '*' || c == '/') {  // 把之前的*/加入表达式
                 while (!s.isEmpty()) {
                     char tmp = s.peek();
-                    if (tmp == '+' || tmp == '-') break;
-                    else if (tmp == '(') break;
+                    if (tmp == '+' || tmp == '-' || tmp == '(') break;
                     else if (tmp == '*' || tmp == '/') sb.append(s.pop());
                 }
                 s.push(c);  // 确保当前栈中, '('后, 只有1个*/运算符
             } else if (c == '+' || c == '-') {  // 把之前的+-*/加入表达式
                 while (!s.isEmpty()) {
                     char tmp = s.peek();
-                    if (tmp == '+' || tmp == '-' || tmp == '*' || tmp == '/') sb.append(s.pop());
-                    else if (tmp == '(') break;
+                    if (tmp == '(') break;
+                    else sb.append(s.pop());
                 }
                 s.push(c);  // 确保当前栈中, '('后, 只有1个+-运算符
             } else if (c == ')') {  // 弹出'('前的所有运算符
