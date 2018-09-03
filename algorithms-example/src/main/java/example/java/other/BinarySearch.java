@@ -6,7 +6,7 @@ public class BinarySearch {
         int a = 0;
         int b = ary.length - 1;
         while (a <= b) {
-//            int mid = (a + b) / 2;  // TODO: a+b may be overflow
+//            int mid = (a + b) / 2;  // a+b may be overflow
             int mid = a + (b-a) / 2;
             if (k > ary[mid]) a = mid + 1;
             else if (k < ary[mid]) b = mid - 1;
@@ -44,6 +44,19 @@ public class BinarySearch {
         return l;
     }
 
+    // 在ary中找到一个索引, ary[i] <= k, 但是ary[i+1] > k
+    public int indexOf(int[] ary, int k) {
+        int lo = 0, hi = ary.length-1;
+        if (k < ary[lo]) return -1;
+        while (lo <= hi) {
+            int mid = (lo + hi) / 2;
+            if (k == ary[mid]) return mid;
+            else if (k > ary[mid]) lo = mid + 1;
+            else hi = mid - 1;
+        }
+        return hi;
+    }
+
     public static void main(String[] args) {
         int[] ary = {1,2,10,15,100};
 
@@ -64,5 +77,12 @@ public class BinarySearch {
         System.out.println(bs.binarySearch1(new int[]{12, 13}, 12));
         System.out.println(bs.binarySearch1(new int[]{12, 13}, 13));
 
+        System.out.println("====");
+
+        System.out.println(bs.indexOf(ary, 0));  // -1
+        System.out.println(bs.indexOf(ary, 1));  // 0
+        System.out.println(bs.indexOf(ary, 3));  // 1
+        System.out.println(bs.indexOf(ary, 17));  // 3
+        System.out.println(bs.indexOf(ary, 101));  // 5
     }
 }
