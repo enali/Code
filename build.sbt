@@ -50,6 +50,7 @@ lazy val libExample = (project in file("lib-example"))
     libraryDependencies ++= akkaDep ++ jacksonDep ++ Seq(
       guavaDep, nettyDep, sprayJsonDep,
       "org.json4s" %% "json4s-jackson" % "3.5.3",
+      "cglib" % "cglib" % "3.2.7",  // code generation library
       "com.beust" % "jcommander" % "1.72", // cmdline arguments parser
       "ch.lightshed" %% "courier" % "0.1.4", // send email
       "io.dropwizard.metrics" % "metrics-core" % "4.0.3"  // metrics
