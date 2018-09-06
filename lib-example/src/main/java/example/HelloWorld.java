@@ -1,5 +1,8 @@
 package example;
 
+/**
+ * 用于研究Java字节码的示例类
+ */
 public class HelloWorld {
     private String name;
 
