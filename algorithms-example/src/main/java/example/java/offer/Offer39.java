@@ -15,6 +15,8 @@ public class Offer39 {
         return left > right ? (left + 1) : (right + 1);
     }
 
+    // TODO: 非递归版本
+
     public static void main(String[] args) {
         TreeNode<String> root = TreeUtils.createCharTree(
                 new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9"}

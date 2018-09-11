@@ -24,16 +24,16 @@ public class Offer31_2 {
 
         int maxIdx = 0;
         for (int i=1; i<len; i++) {
-            int maxTmpLen = 0;
+            int preIdx = 0;  // 记录以i为结尾的递增序列的前一个数的索引
             int maxTmp = 0;
             for (int j=i-1; j>=0; j--) {
                 if (ary[j] < ary[i] && dp[j] > maxTmp) {
                     maxTmp = dp[j];
-                    maxTmpLen = j;
+                    preIdx = j;
                 }
             }
             dp[i] = maxTmp + 1;
-            path[i] = maxTmpLen;
+            path[i] = preIdx;
             if (dp[i] > dp[maxIdx]) maxIdx = i;
         }
 

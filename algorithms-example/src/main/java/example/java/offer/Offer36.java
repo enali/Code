@@ -30,7 +30,7 @@ public class Offer36 {
             else if (j > hi) ary[k] = aux[i++];
             else if (aux[i] <= aux[j]) ary[k] = aux[i++];
             else {
-                count += mid - i + 1;  // 重点: 如果aux[i]>aux[j], 则aux[j]跟aux[i]...aux[mid]全部构成逆序对
+                count += mid - i + 1;  // IMP: 如果aux[i]>aux[j], 则aux[j]跟aux[i]...aux[mid]全部构成逆序对
                 ary[k] = aux[j++];
             }
         return count;

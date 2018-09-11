@@ -1,7 +1,5 @@
 package example.java.leetcode;
 
-import scala.Int;
-
 /**
  * 题目:
  * 已知字符串S与字符串T, 求在S中的最小窗口(区间), 使得这个区间中包含了字符串T中的所有字符.
