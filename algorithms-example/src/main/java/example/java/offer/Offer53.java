@@ -29,7 +29,7 @@ public class Offer53 {
 
             if (j + 1 < pattern.length() && pattern.charAt(j + 1) == '*') { // 如果下一个模式字符是*号的话
                 // '*'有两个特别的地方, 表示其前一个字符重复0或多次.
-                //    重复0次, 相当于模式串跳到j+2        当前字符必须简单匹配,    重复多次, 则文本串跳到i+1
+                //    重复0次, 相当于模式串跳到j+2, 此时不在乎当前是否匹配        当前字符必须简单匹配,    重复多次, 则文本串跳到i+1
                 ans = dp(i, j + 2, text, pattern) || first_match && dp(i + 1, j, text, pattern);
             } else { // 如果不是*, 只有字母和'.', 则跳到下一字符
                 ans = first_match && dp(i + 1, j + 1, text, pattern);
