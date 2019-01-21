@@ -8,6 +8,7 @@ import java.util.Stack;
 public class Offer62 {
     private static int idx = 0;
 
+    // 前序遍历, 将null用字符'$'替换
     public static <T> String serialize(TreeNode<T> root) {
         if (root == null) return "";
 
